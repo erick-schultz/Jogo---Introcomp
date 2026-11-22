@@ -1,3 +1,5 @@
+import pygame
+
 class Window:  # criando classe janela
   __width = 0  # criou largura
   __height = 0  # criou altura
@@ -10,6 +12,14 @@ class Window:  # criando classe janela
   def returnWinSize(self): #retorna valor da janela
       return (self.__width, self.__height)
 
+  def returnCenter(self): #retorna valor do centro
+    return (self.__width / 2, self.__height / 2)
+
   def returnColor(self):  # retorna a cor da janela
       return self.__color 
+
+
+  
+    
+    
 
