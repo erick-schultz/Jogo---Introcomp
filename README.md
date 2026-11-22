@@ -51,4 +51,13 @@ O dano de um ataque é calculado por `ataque * (50 / (50 + defesa_alvo))`. A aç
 - `jogador.py`: subclasse de `Personagem` para os personagens controlados pelo jogador.
 - `inimigo.py`: subclasse de `Personagem` que espelha o sprite e escolhe aleatoriamente entre atacar e defender.
 - `window.py`: configuração das dimensões da janela (`1024x768`) e cor de fundo.
-- `versoes_anteriores/`: histórico das versões anteriores do projeto (`v1.0`, protótipo inicial de interface; `v17`, versão intermediária anterior ao menu de seleção; e `v2.0`, versão original com menu e telas finais antes das correções da `v3.0` na raiz).
+- `versoes_anteriores/`: cópias das versões anteriores (`v1.0`, `v17` e `v2.0`).
+
+## Histórico de versões
+
+A versão atual (`v3.0`) está na raiz do repositório, enquanto as etapas anteriores permanecem preservadas em `versoes_anteriores/`:
+
+- **`v3.0` (raiz)**: versão jogável atual, baseada na `v2.0`, com correções no menu inicial, no encerramento das telas de vitória/derrota e no avanço automático dos turnos dos inimigos.
+- **`versoes_anteriores/v2.0/`**: versão original com tela de seleção de equipe (5 classes), trilha sonora (`musica.mp3`), easter eggs e telas de vitória e derrota.
+- **`versoes_anteriores/v17/`**: versão intermediária com o combate já integrado à interface, usando três personagens fixos (Caçador, Paladino e Bispo) contra Necromante e Esqueleto.
+- **`versoes_anteriores/v1.0/`**: protótipo inicial com a janela, sprites e navegação básica de menu, ainda sem o sistema de combate conectado à interface.
