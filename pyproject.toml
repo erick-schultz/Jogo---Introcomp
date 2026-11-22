@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "jogo-introcomp"
-version = "2.0.0"
+version = "3.0.0"
 description = "Jogo de RPG de batalha por turnos desenvolvido em Python e Pygame para o Introcomp."
 authors = ["Erick Schultz"]
 
