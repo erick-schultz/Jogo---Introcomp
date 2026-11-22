@@ -28,16 +28,12 @@ VERMELHO = (255,0,0)
 VERDE = (0,255,0)
 
 # Posição inicial do personagem
-turbox = 0 #posição x
+turbox = -100 #posição x
 turboy = 50  # posição vertical y do personagem 
 
 
 #--------------easter egg-------------------------
 def desenhar_turbo(janela,x, y): #desenha na tela
-  # Posição inicial do personagem
-  turbox = 0 #posição x
-  turboy = 50  # posição vertical y do personagem 
-  
   # Carrega a imagem do personagem
   turbo = pygame.image.load("Turbo.webp")
   turbo = pygame.transform.scale(turbo, (100, 100))  # Ajusta o tamanho da imagem
@@ -47,10 +43,6 @@ def mover_turbo(): #move o personagem
   velocidade_personagem = 35
   global turbox  # Permitir a modificação da variável global
   turbox += velocidade_personagem
-
-  # Limite para sair pela borda direita
-  if turbox > 1024:
-     turbox = -100  # Reinicia na borda esquerda
 
 #------------------------------------------------------
 
@@ -411,16 +403,23 @@ def main():
     except pygame.error:
       pass
 
+  # Easter egg: 10% de chance de passar uma vez na partida
+  global turbox
+  turbox = -100
+  mostrar_turbo = random.random() < 0.10
+
   # Cria laço principal
   while running:
 
     #mostrar a imagem de fundo na tela
     janela.blit(img_fundo, (0, 0))
     
-    # Desenha easter egg na tela
-    desenhar_turbo(janela,turbox, turboy)
-    # Movimentação do easter egg
-    mover_turbo()
+    # Desenha e movimenta easter egg na tela (passa uma unica vez)
+    if mostrar_turbo:
+      desenhar_turbo(janela, turbox, turboy)
+      mover_turbo()
+      if turbox > 1024:
+        mostrar_turbo = False
 
     #se os tres personagens ja tiverem sido escolhidos, desnha na tela
 
@@ -588,7 +587,8 @@ def main():
 
       # redesenha cena com sprites e vidas atualizadas
       janela.blit(img_fundo, (0, 0))
-      desenhar_turbo(janela, turbox, turboy)
+      if mostrar_turbo:
+        desenhar_turbo(janela, turbox, turboy)
       janela.blit(img_quad, rect_quad)
       janela.blit(img_quad2, rect_quad2)
       desenhar_personagens(jogadores_selecionados, janela)
