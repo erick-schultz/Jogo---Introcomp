@@ -35,7 +35,7 @@ turboy = 50  # posição vertical y do personagem
 #--------------easter egg-------------------------
 def desenhar_turbo(janela,x, y): #desenha na tela
   # Carrega a imagem do personagem
-  turbo = pygame.image.load("Turbo.webp")
+  turbo = pygame.image.load("assets/sprites/Turbo.webp")
   turbo = pygame.transform.scale(turbo, (100, 100))  # Ajusta o tamanho da imagem
   janela.blit(turbo, (x, y))
 
@@ -66,11 +66,11 @@ def desenhar_personagens(personagens, janela) -> None: #desenha os personagens n
 
 def menu_inicial(janela, img_fundo, personagens_selecionados) -> None:
   #cria jogadores com a classe jogador
-  jogador1 = Jogador("Paladino", 100, 280, 35, 70, 3, "P2Paladino.png")
-  jogador2 = Jogador("Ladino", 0, 0, 80, 20, 9, "P5Ladino.png")
-  jogador3 = Jogador("Mago", 0, 0, 60, 50, 6, "P4Mago.png")
-  jogador4 = Jogador("Caçador", 180, 200, 70, 30, 5, "P1Hunter.png")
-  jogador5 = Jogador("Clérigo", 170, 380, 55, 40, 6, "P3Clerigo.png")
+  jogador1 = Jogador("Paladino", 100, 280, 35, 70, 3, "assets/sprites/P2Paladino.png")
+  jogador2 = Jogador("Ladino", 0, 0, 80, 20, 9, "assets/sprites/P5Ladino.png")
+  jogador3 = Jogador("Mago", 0, 0, 60, 50, 6, "assets/sprites/P4Mago.png")
+  jogador4 = Jogador("Caçador", 180, 200, 70, 30, 5, "assets/sprites/P1Hunter.png")
+  jogador5 = Jogador("Clérigo", 170, 380, 55, 40, 6, "assets/sprites/P3Clerigo.png")
 
   #cria lista com todos os jogadores na ordem do menu
   jogs = [jogador1, jogador2, jogador3, jogador4, jogador5]
@@ -89,31 +89,31 @@ def menu_inicial(janela, img_fundo, personagens_selecionados) -> None:
   menu_lim_down = 460
   
   # -------------------criando menu inicial------------------------------ 
-  menu_q1 = pygame.image.load("menuPaladino.jpeg") #primeiro quadrado-personagem
+  menu_q1 = pygame.image.load("assets/ui/menuPaladino.jpeg") #primeiro quadrado-personagem
   rect_menu1 = menu_q1.get_rect()  #criando um objeto retangulo do tamanho do quadrado
   rect_menu1.x = 150  # Posição X inicial
   rect_menu1.y = 230  # Posição Y para ocupar a parte inferior da tela
   menu_q1 = pygame.transform.scale_by(menu_q1, 0.15)
 
-  menu_q2 = pygame.image.load("menuLadino.jpeg") #segundo quadrado-personagem
+  menu_q2 = pygame.image.load("assets/ui/menuLadino.jpeg") #segundo quadrado-personagem
   rect_menu2 = menu_q2.get_rect()  #criando um objeto retangulo do tamanho do quadrado
   rect_menu2.x = 435  # Posição X inicial
   rect_menu2.y = 230  # Posição Y para ocupar a parte inferior da tela
   menu_q2 = pygame.transform.scale_by(menu_q2, 0.15)
 
-  menu_q3 = pygame.image.load("menuMago.jpeg") #terceiro quadrado-personagem
+  menu_q3 = pygame.image.load("assets/ui/menuMago.jpeg") #terceiro quadrado-personagem
   rect_menu3 = menu_q3.get_rect()  #criando um objeto retangulo do tamanho do quadrado
   rect_menu3.x = 720  # Posição X inicial
   rect_menu3.y = 230  # Posição Y para ocupar a parte inferior da tela
   menu_q3 = pygame.transform.scale_by(menu_q3, 0.15)
 
-  menu_q4 = pygame.image.load("menuCacador.jpeg") #quarto quadrado-personagem
+  menu_q4 = pygame.image.load("assets/ui/menuCacador.jpeg") #quarto quadrado-personagem
   rect_menu4 = menu_q4.get_rect()  #criando um objeto retangulo do tamanho do quadrado
   rect_menu4.x = 290  # Posição X inicial
   rect_menu4.y = 500  # Posição Y para ocupar a parte inferior da tela
   menu_q4 = pygame.transform.scale_by(menu_q4, 0.15)
 
-  menu_q5 = pygame.image.load("menuClerigo.jpeg") #quinto quadrado-personagem
+  menu_q5 = pygame.image.load("assets/ui/menuClerigo.jpeg") #quinto quadrado-personagem
   rect_menu5 = menu_q5.get_rect()  #criando um objeto retangulo do tamanho do quadrado
   rect_menu5.x = 580  # Posição X inicial
   rect_menu5.y = 500  # Posição Y para ocupar a parte inferior da tela
@@ -232,7 +232,7 @@ def exibir_tela_final(janela, batalha) -> None:
   transparencia = 0
   
   #easter egg 
-  dark_souls = pygame.image.load("you_died_ds.png")
+  dark_souls = pygame.image.load("assets/ui/you_died_ds.png")
   dark_souls = pygame.transform.scale(dark_souls, (600, 600))
 
   #salva texto da tela final
@@ -309,11 +309,11 @@ def main():
 
   #----------- imagens e menu (integração) --------------
   #imagem de fundo
-  img_fundo = pygame.image.load("./fundoCerto.png")  #carregando imagem de fundo para a variavel
+  img_fundo = pygame.image.load("assets/ui/fundoCerto.png")  #carregando imagem de fundo para a variavel
   img_fundo = pygame.transform.scale(img_fundo,(win.returnWinSize()))  #para redimensionar o tamanho da imagem q ficou mto grande
   
   #imagem quadrado1
-  img_quad = pygame.image.load("combat_menu_1.png")  #carregando imagem quadrado
+  img_quad = pygame.image.load("assets/ui/combat_menu_1.png")  #carregando imagem quadrado
   rect_quad = img_quad.get_rect()  #criando um objeto retangulo do tamanho do quadrado
   
   #definindo posição do retangulo
@@ -321,7 +321,7 @@ def main():
   rect_quad.y = 530  # Posição Y para ocupar a parte inferior da tela
 
   #imagem quadrado2
-  img_quad2 = pygame.image.load("combat_menu_2.png")  #carregando imagem quadrado
+  img_quad2 = pygame.image.load("assets/ui/combat_menu_2.png")  #carregando imagem quadrado
   rect_quad2 = img_quad2.get_rect()  #criando um objeto retangulo do tamanho do quadrado
   
   # #definindo posição do retangulo
@@ -343,8 +343,8 @@ def main():
   jogadores_selecionados = pygame.sprite.Group()
 
   # Cria inimigos (genéricos), no futuro, add como grupo do sprite
-  inimigo1 = Inimigo("Necromante", 780, 190, 30, 70, 7, "I2.png")
-  inimigo2 = Inimigo("Esqueleto", 700, 320, 70, 30, 6, "I1.png")
+  inimigo1 = Inimigo("Necromante", 780, 190, 30, 70, 7, "assets/sprites/I2.png")
+  inimigo2 = Inimigo("Esqueleto", 700, 320, 70, 30, 6, "assets/sprites/I1.png")
 
   # cria grupo de inimigos
   inimigos = pygame.sprite.Group()
@@ -398,7 +398,7 @@ def main():
   #configura e toca música
   if audio_disponivel:
     try:
-      pygame.mixer.music.load("musica.mp3")
+      pygame.mixer.music.load("assets/audio/musica.mp3")
       pygame.mixer.music.play(-1, 0.0)
     except pygame.error:
       pass
