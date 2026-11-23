@@ -51,6 +51,7 @@ O dano de um ataque é calculado por `ataque * (50 / (50 + defesa_alvo))`. A aç
 - `jogador.py`: subclasse de `Personagem` para os personagens controlados pelo jogador.
 - `inimigo.py`: subclasse de `Personagem` que espelha o sprite e escolhe aleatoriamente entre atacar e defender.
 - `window.py`: configuração das dimensões da janela (`1024x768`) e cor de fundo.
+- `assets/`: sprites dos personagens e inimigos (`sprites/`), imagens de fundo e menus (`ui/`) e trilha sonora (`audio/`).
 - `versoes_anteriores/`: cópias das versões anteriores (`v1.0`, `v17` e `v2.0`).
 
 ## Histórico de versões

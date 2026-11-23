@@ -43,7 +43,7 @@ class Personagem(pygame.sprite.Sprite):
   def receber_dano(self, dano) -> None:
     self.pontos_vida -= dano
     if (self.pontos_vida <= 0):
-      self.imagem = pygame.image.load("morte.png")
+      self.imagem = pygame.image.load("assets/sprites/morte.png")
       self.imagem = pygame.transform.scale(self.imagem, (200,200))
 
   def morreu(self) -> bool:
